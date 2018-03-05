@@ -47,7 +47,7 @@ app.Run(new Form {
 
 Result:
 
-![Result Image]( "Result image")
+![Result Image](https://raw.githubusercontent.com/SlowLogicBoy/Eto.Generator/master/Resources/sample1.PNG "Result image")
 
 ## TODO
 
