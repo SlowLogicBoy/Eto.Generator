@@ -4,6 +4,6 @@ namespace Eto.Generator.Tests.Helpers
     {
         ITestModel ChildModel { get; }
         bool? NullableBool { get; }
-        bool? Bool { get; }
+        bool Bool { get; }
     }
 }
