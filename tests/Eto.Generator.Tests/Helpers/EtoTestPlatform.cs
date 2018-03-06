@@ -11,6 +11,7 @@ namespace Eto.Generator.Tests.Helpers
         {
             this.Add<Application.IHandler>(() => new Mock<Application.IHandler>().Object);
             this.Add<TextBoxCell.IHandler>(() => new Mock<TextBoxCell.IHandler>().Object);
+            this.Add<CheckBoxCell.IHandler>(() => new Mock<CheckBoxCell.IHandler>().Object);
         }
     }
 }

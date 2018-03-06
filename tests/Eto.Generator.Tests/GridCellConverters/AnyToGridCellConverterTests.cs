@@ -1,4 +1,4 @@
-using Eto.Forms;
+﻿using Eto.Forms;
 using Eto.Generator.GridCellConverters;
 using Eto.Generator.Tests.Helpers;
 using Moq;
@@ -8,12 +8,12 @@ using Xunit;
 
 namespace Eto.Generator.Tests.GridCellConverters
 {
-    public class AnyToGridCellConverterTest : EtoTestBase
+    public class AnyToGridCellConverterTests : EtoTestBase
     {
         [Fact]
-        public void Convert_WhenAnyPropertyTypePassed_TextBoxCellWithBinding()
+        public void Convert_WhenAnyPropertyTypePassed_TextBoxCellWithCorrentBinding()
         {
-            //Arrange
+            //Given
             var toStringValue = "ToStringValue";
 
             var childModel = new Mock<ITestModel>();
@@ -23,10 +23,10 @@ namespace Eto.Generator.Tests.GridCellConverters
             model.SetupGet(m => m.ChildModel).Returns(childModel.Object);
             var property = model.Object.GetType().GetProperty(nameof(ITestModel.ChildModel));
 
-            //Act
+            //When
             var cell = new AnyToGridCellConverter().Convert(property);
 
-            //Assert
+            //Then
             cell.ShouldBeOfType<TextBoxCell>();
             cell.As<TextBoxCell>().Binding.GetValue(model.Object).ShouldBe(toStringValue);
         }
